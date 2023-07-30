@@ -1,0 +1,14 @@
+<!-- script 태그 위치가 head 태그라면 HTML 파싱 시 script 태그를 만나면 파싱 중단, script 로드로 HTML 파싱이 블로킹. DOM생성 지연
+따라서, head 태그에 위치하지 않고 body 태그에 script태그를 위치함 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>hello-world task</title>
+  </head>
+  <body>
+    <script>
+      alert("자바스크립트!");
+    </script>
+  </body>
+</html>
