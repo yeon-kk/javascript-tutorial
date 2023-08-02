@@ -33,3 +33,25 @@ const factorial = (n) => {
   }
 };
 alert(factorial(5));
+
+//task3
+// 재귀의 경우 시간이 많이 소요됨
+const fibo = (n) => {
+  if (n < 1) return;
+  if (n == 1) return 1;
+  else if (n == 2) return 1;
+  else {
+    return fib(n - 1) + fib(n - 2);
+  }
+};
+const fib = (n) => {
+  const dp = [];
+  dp.push(0);
+  dp.push(1);
+  dp.push(1);
+  for (let i = 3; i <= n; i++) {
+    dp.push(dp[i - 1] + dp[i - 2]);
+  }
+  return dp[n];
+};
+alert(fib(77));
