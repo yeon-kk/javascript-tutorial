@@ -24,3 +24,12 @@ const sumToFormula = (n) => {
   return (n * (n + 1)) / 2;
 };
 alert(sumToFormula(100));
+
+//task2
+const factorial = (n) => {
+  if (n === 0) return 1;
+  else {
+    return n * factorial(n - 1);
+  }
+};
+alert(factorial(5));
