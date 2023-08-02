@@ -8,3 +8,13 @@ const sumToFor = (n) => {
   return result;
 };
 alert(sumToFor(100));
+
+//(2)
+const sumToRecursion = (n) => {
+  if (n == 1) {
+    return 1;
+  } else {
+    return n + sumToRecursion(n - 1);
+  }
+};
+alert(sumToRecursion(100));
