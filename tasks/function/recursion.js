@@ -18,3 +18,9 @@ const sumToRecursion = (n) => {
   }
 };
 alert(sumToRecursion(100));
+
+//(3)
+const sumToFormula = (n) => {
+  return (n * (n + 1)) / 2;
+};
+alert(sumToFormula(100));
