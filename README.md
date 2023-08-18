@@ -10,3 +10,12 @@ https://ko.javascript.info/
 
 </div>
 </details>
+
+<details>
+<summary>에러 핸들링</summary>
+<div markdown="1">
+
+- 'try..catch'와 에러 핸들링
+
+</div>
+</details>
