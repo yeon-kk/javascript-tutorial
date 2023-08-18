@@ -12,11 +12,12 @@ cachingDecorator함수 안의 return functions(x){}인 함수를 호출하는 �
 코드를 조금 수정하면, return slow = function(x){}이 된다.
 
 - 그러면, 왜 caching인가?
+
   단순히 클로저의 역할을 한다는 것이 캐싱의 의미가 아니다.
   slow라는 함수의 주석(2번 라인)을 살펴보면 '// CPU 집약적인 작업' 으로 표현되어 있다.
   여기서는 alert()를 호출하고 종료할 뿐이지만, 사실 엄청나게 복잡한 연산이 행해질 수 있다.
 
-따라서, slow 즉, return function(x){}를 호출할 때 if문으로 cache에 x가 저장이 되어있는지 확인하는 이유는 엄청 복잡한 연산이 다시 수행되지 않게하기 위한 것 이라는 의미이다.
+  따라서, slow 즉, return function(x){}를 호출할 때 if문으로 cache에 x가 저장이 되어있는지 확인하는 이유는 엄청 복잡한 연산이 다시 수행되지 않게하기 위함이다.
 
 ```
 function slow(x) {
@@ -68,3 +69,34 @@ alert( "다시 호출: " + slow(2) );
 2. 내부함수인 클로저는 먼저 cache의 x에 대응하는 값이 있는지를 확인한다.
 3. 있다면 해당 값을 리턴하고
 4. 없다면 콜백을 실행해서 연산과정을 거친 뒤 얻은 결과값을 cache에 저장한다. 그 뒤 결과값을 리턴한다.
+
+### 'func.call’를 사용해 컨텍스트 지정하기
+
+```
+func.call(context, arg1, arg2, ...)
+```
+
+단순하게 보면 context 객체에 func를 추가해서 사용하겠다는 것을 의미한다.(메서드를 빌린다)
+
+여기에 arg는 단순히 func를 호출할 때 필요한 매개변수이다.
+
+### 여러 인수 전달하기
+
+그런데, 위처럼 arg1, arg2 이렇게 각각 구분하는 것이 아니라, 여러 인수를 한번에 전달하려면 arguments를 사용한다.
+
+```
+func.call(context, ...arguemnts)
+```
+
+### func.apply
+
+- call은 이터러블
+- apply는 유사 배열 객체
+
+```
+func.apply(context, args)
+```
+
+### 메서드 빌리기
+
+### 데코레이터와 함수 프로퍼티
