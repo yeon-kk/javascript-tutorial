@@ -19,3 +19,12 @@ https://ko.javascript.info/
 
 </div>
 </details>
+
+<details>
+<summary>이벤트 기초</summary>
+<div markdown="1">
+
+- 이벤트 위임
+
+</div>
+</details>
